@@ -6,7 +6,6 @@ import { Main as MainLayout, Minimal as MinimalLayout, MainWithoutSideBar as Mai
 
 import {
   Dashboard as DashboardView,
-  GerenciamentoMesas as GerenciamentoMesasView,
   ProductList as ProductListView,
   UserList as UserListView,
   Typography as TypographyView,
@@ -16,7 +15,10 @@ import {
   SignUp as SignUpView,
   SignIn as SignInView,
   NotFound as NotFoundView,
-  PasswordReset as PasswordResetView
+  PasswordReset as PasswordResetView,
+  CarShop as CarShopView,
+  Payment as PaymentView,
+  PaymentFeedback as PaymentFeedbackView
 } from './views';
 
 const Routes = () => {
@@ -92,7 +94,25 @@ const Routes = () => {
         exact
         layout={MinimalLayout}
         path="/PasswordReset"
-      />      
+      />
+      <RouteWithLayout
+        component={CarShopView}
+        exact
+        layout={MainWithoutSideBarLayout}
+        path="/CarShop"
+      />
+      <RouteWithLayout
+        component={PaymentView}
+        exact
+        layout={MainWithoutSideBarLayout}
+        path="/Payment"
+      />
+      <RouteWithLayout
+        component={PaymentFeedbackView}
+        exact
+        layout={MinimalLayout}
+        path="/PaymentFeedback"
+      />       
       <Redirect to="/not-found" />
     </Switch>
   );

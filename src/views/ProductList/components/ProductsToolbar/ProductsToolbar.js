@@ -34,24 +34,35 @@ const ProductsToolbar = props => {
 
   return (
     <div {...rest} className={clsx(classes.root, className)}>
-      <div className={classes.row}>
-        <Grid container>
-          <Grid>
+      
+        <Grid container spacing='2'>
+          <Grid 
+            item
+            lg={3}
+            sm={6}
+            xl={3}
+            xs={12}>
             <SearchInput className={classes.searchInput} placeholder="Procurar Produto"/>
           </Grid>
           <Grid
             item
-            lg={8}
+            lg={6}
             sm={6}
-            xl={8}
+            xl={6}
             xs={12}></Grid>
-          <Grid>           
-            <Button color="primary" variant="contained" href='/sign-in'>
+          <Grid 
+            item
+            lg={3}
+            sm={6}
+            xl={3}
+            xs={12}
+            align='right'>           
+            <Button color="primary" variant="contained" href='/CarShop'>
               Finalizar Pedido
             </Button> 
           </Grid>
         </Grid>  
-      </div>
+     
     </div>
   );
 };

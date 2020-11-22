@@ -37,6 +37,7 @@ const Topbar = props => {
           <img
             alt="Logo"
             src="/images/logos/logo-chapa-quente.png"
+            align='center'
           />
         </RouterLink>
         <div className={classes.flexGrow} />
