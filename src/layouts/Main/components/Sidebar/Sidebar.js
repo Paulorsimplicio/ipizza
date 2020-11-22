@@ -10,6 +10,7 @@ import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
+import LoginIcon from '@material-ui/icons/InputTwoTone'
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 import { Profile, SidebarNav, UpgradePlan } from './components';
@@ -44,23 +45,18 @@ const Sidebar = props => {
 
   const pages = [
     {
-      title: 'Dashboard',
-      href: '/dashboard',
-      icon: <DashboardIcon />
-    },
-    {
-      title: 'Users',
-      href: '/users',
-      icon: <PeopleIcon />
-    },
-    {
-      title: 'Products',
+      title: 'Produtos',
       href: '/products',
       icon: <ShoppingBasketIcon />
     },
     {
-      title: 'Authentication',
+      title: 'Login',
       href: '/sign-in',
+      icon: <LoginIcon />
+    },
+    {
+      title: 'Reset de senha',
+      href: '/PasswordReset',
       icon: <LockOpenIcon />
     },
     {

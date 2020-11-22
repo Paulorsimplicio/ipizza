@@ -8,10 +8,16 @@ import {
   CardActions,
   Typography,
   Grid,
-  Divider
+  Divider,
+  CardHeader,
+  Button,
+  Popover
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import MoneyIcon from '@material-ui/icons/MoneyTwoTone'
+import DonutLargeIcon from '@material-ui/icons/DonutLarge'
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -36,7 +42,13 @@ const useStyles = makeStyles(theme => ({
   statsIcon: {
     color: theme.palette.icon,
     marginRight: theme.spacing(1)
-  }
+  },
+  popover: {
+    pointerEvents: 'none',
+  },
+  paper: {
+    padding: theme.spacing(1),
+  },
 }));
 
 const ProductCard = props => {
@@ -44,32 +56,73 @@ const ProductCard = props => {
 
   const classes = useStyles();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handlePopoverOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };  
+  
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+
   return (
     <Card
       {...rest}
       className={clsx(classes.root, className)}
     >
+      <CardHeader
+        title={product.title}
+        align='center'
+      >
+      </CardHeader>  
       <CardContent>
         <div className={classes.imageContainer}>
           <img
             alt="Product"
             className={classes.image}
             src={product.imageUrl}
-          />
+          />           
         </div>
-        <Typography
-          align="center"
-          gutterBottom
-          variant="h4"
-        >
-          {product.title}
-        </Typography>
         <Typography
           align="center"
           variant="body1"
         >
           {product.description}
         </Typography>
+      <div align='center'>
+        <Button
+          aria-owns={open ? 'mouse-over-popover' : undefined}
+          aria-haspopup="true"
+          onMouseEnter={handlePopoverOpen}
+          onMouseLeave={handlePopoverClose}
+          size="small"
+        >
+            <AddCircleOutlineIcon />
+        </Button>
+        <Popover
+        id="mouse-over-popover"
+        className={classes.popover}
+        classes={{
+          paper: classes.paper,
+        }}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        onClose={handlePopoverClose}
+        disableRestoreFocus
+      >
+        <Typography>Adicionar ao carrinho</Typography>
+      </Popover> 
+      </div>               
       </CardContent>
       <Divider />
       <CardActions>
@@ -81,24 +134,24 @@ const ProductCard = props => {
             className={classes.statsItem}
             item
           >
-            <AccessTimeIcon className={classes.statsIcon} />
+            <MoneyIcon className={classes.statsIcon} />
             <Typography
               display="inline"
               variant="body2"
             >
-              Updated 2hr ago
+              {product.price}
             </Typography>
           </Grid>
           <Grid
             className={classes.statsItem}
             item
           >
-            <GetAppIcon className={classes.statsIcon} />
+            <DonutLargeIcon className={classes.statsIcon} />
             <Typography
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads} Downloads
+              {product.size}
             </Typography>
           </Grid>
         </Grid>

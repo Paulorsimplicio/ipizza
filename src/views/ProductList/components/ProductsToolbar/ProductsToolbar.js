@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Button } from '@material-ui/core';
-
+import { Button, Grid, Typography } from '@material-ui/core';
 import { SearchInput } from 'components';
 
 const useStyles = makeStyles(theme => ({
@@ -34,26 +33,24 @@ const ProductsToolbar = props => {
   const classes = useStyles();
 
   return (
-    <div
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <div {...rest} className={clsx(classes.root, className)}>
       <div className={classes.row}>
-        <span className={classes.spacer} />
-        <Button className={classes.importButton}>Import</Button>
-        <Button className={classes.exportButton}>Export</Button>
-        <Button
-          color="primary"
-          variant="contained"
-        >
-          Add product
-        </Button>
-      </div>
-      <div className={classes.row}>
-        <SearchInput
-          className={classes.searchInput}
-          placeholder="Search product"
-        />
+        <Grid container>
+          <Grid>
+            <SearchInput className={classes.searchInput} placeholder="Procurar Produto"/>
+          </Grid>
+          <Grid
+            item
+            lg={8}
+            sm={6}
+            xl={8}
+            xs={12}></Grid>
+          <Grid>           
+            <Button color="primary" variant="contained" href='/sign-in'>
+              Finalizar Pedido
+            </Button> 
+          </Grid>
+        </Grid>  
       </div>
     </div>
   );

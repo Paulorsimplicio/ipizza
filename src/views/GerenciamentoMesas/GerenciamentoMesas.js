@@ -59,16 +59,7 @@ const GerenciamentoMesas = () => {
         </Grid>
         <Grid
           item
-          lg={8}
-          md={12}
-          xl={9}
-          xs={12}
-        >
-          <CardMesa />
-        </Grid>
-        <Grid
-          item
-          lg={4}
+          lg={3}
           md={6}
           xl={3}
           xs={12}
@@ -77,7 +68,7 @@ const GerenciamentoMesas = () => {
         </Grid>
         <Grid
           item
-          lg={4}
+          lg={3}
           md={6}
           xl={3}
           xs={12}
@@ -86,9 +77,18 @@ const GerenciamentoMesas = () => {
         </Grid>
         <Grid
           item
-          lg={8}
-          md={12}
-          xl={9}
+          lg={3}
+          md={6}
+          xl={3}
+          xs={12}
+        >
+          <CardMesa />
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          md={6}
+          xl={3}
           xs={12}
         >
           <CardMesa />

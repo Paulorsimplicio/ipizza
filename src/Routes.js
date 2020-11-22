@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
-import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
+import { Main as MainLayout, Minimal as MinimalLayout, MainWithoutSideBar as MainWithoutSideBarLayout } from './layouts';
 
 import {
   Dashboard as DashboardView,
@@ -15,7 +15,8 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
-  NotFound as NotFoundView
+  NotFound as NotFoundView,
+  PasswordReset as PasswordResetView
 } from './views';
 
 const Routes = () => {
@@ -24,19 +25,13 @@ const Routes = () => {
       <Redirect
         exact
         from="/"
-        to="/dashboard"
+        to="/products"
       />
       <RouteWithLayout
         component={DashboardView}
         exact
         layout={MainLayout}
         path="/dashboard"
-      />
-      <RouteWithLayout
-        component={GerenciamentoMesasView}
-        exact
-        layout={MainLayout}
-        path="/GerenciamentoMesas"
       />
       <RouteWithLayout
         component={UserListView}
@@ -47,7 +42,7 @@ const Routes = () => {
       <RouteWithLayout
         component={ProductListView}
         exact
-        layout={MainLayout}
+        layout={MainWithoutSideBarLayout}
         path="/products"
       />
       <RouteWithLayout
@@ -92,6 +87,12 @@ const Routes = () => {
         layout={MinimalLayout}
         path="/not-found"
       />
+      <RouteWithLayout
+        component={PasswordResetView}
+        exact
+        layout={MinimalLayout}
+        path="/PasswordReset"
+      />      
       <Redirect to="/not-found" />
     </Switch>
   );

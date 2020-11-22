@@ -123,7 +123,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SignIn = props => {
+const PasswordReset = props => {
   const { history } = props;
 
   const classes = useStyles();
@@ -193,8 +193,7 @@ const SignIn = props => {
                 className={classes.quoteText}
                 variant="h1"
               >
-                Bem-vindo a Pizzaria Chapa Quente. 
-                Entre, faça seus pedidos e aproveite nossas promoções.
+                Pizzaria Chapa Quente, resete sua senha. 
               </Typography>
               <div className={classes.person}>
               </div>
@@ -222,7 +221,7 @@ const SignIn = props => {
                   className={classes.title}
                   variant="h2"
                 >
-                  Login
+                  Reset de senha
                 </Typography>
 
                 <TextField
@@ -246,7 +245,7 @@ const SignIn = props => {
                   helperText={
                     hasError('password') ? formState.errors.password[0] : null
                   }
-                  label="Senha"
+                  label="Nova senha"
                   name="password"
                   onChange={handleChange}
                   type="password"
@@ -262,34 +261,8 @@ const SignIn = props => {
                   type="submit"
                   variant="contained"
                 >
-                  Entrar
+                  Confirmar
                 </Button>
-                <Typography
-                  color="textSecondary"
-                  variant="body1"
-                >
-                  Não é cadastrado?{' '}
-                  <Link
-                    component={RouterLink}
-                    to="/sign-up"
-                    variant="h6"
-                  >
-                    Cadastre-se
-                  </Link>
-                </Typography>
-                <Typography
-                  color="textSecondary"
-                  variant="body1"
-                >
-                  Esqueceu a senha?{' '}
-                  <Link
-                    component={RouterLink}
-                    to="/PasswordReset"
-                    variant="h6"
-                  >
-                    Clique aqui
-                  </Link>
-                </Typography>
               </form>
             </div>
           </div>
@@ -299,8 +272,8 @@ const SignIn = props => {
   );
 };
 
-SignIn.propTypes = {
+PasswordReset.propTypes = {
   history: PropTypes.object
 };
 
-export default withRouter(SignIn);
+export default withRouter(PasswordReset);
