@@ -3,10 +3,11 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
+import { AppBar, Toolbar, Badge, Hidden, IconButton, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
+import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,11 +37,18 @@ const Topbar = props => {
         <RouterLink to="/">
           <img
             alt="Logo"
-            src="/images/logos/logo--white.svg"
+            src="/images/logos/logo-chapa-quente.png"
           />
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
+          <IconButton
+            className={classes.signInButton}
+            color="inherit"
+            href='/sign-in'
+          >
+            <PermIdentityOutlinedIcon />
+          </IconButton>
           <IconButton color="inherit">
             <Badge
               badgeContent={notifications.length}

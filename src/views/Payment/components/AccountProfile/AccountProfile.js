@@ -52,8 +52,8 @@ const AccountProfile = props => {
 
   const user = {
     name: 'Shen Zhi',
-    city: 'Los Angeles',
-    country: 'USA',
+    city: 'São Paula',
+    country: 'BRA',
     timezone: 'GTM-7',
     avatar: '/images/avatars/avatar_11.png'
   };
@@ -70,7 +70,7 @@ const AccountProfile = props => {
               gutterBottom
               variant="h2"
             >
-              John Doe
+              Paula Arshavin
             </Typography>
             <Typography
               className={classes.locationText}

@@ -3,9 +3,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton } from '@material-ui/core';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none'
   }
@@ -27,7 +27,7 @@ const Topbar = props => {
         <RouterLink to="/">
           <img
             alt="Logo"
-            src="/images/logos/logo--white.svg"
+            src="/images/logos/logo-chapa-quente.png"
           />
         </RouterLink>
       </Toolbar>

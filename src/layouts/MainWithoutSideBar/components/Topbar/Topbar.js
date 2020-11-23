@@ -7,6 +7,8 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
+import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,6 +19,12 @@ const useStyles = makeStyles(theme => ({
   },
   signOutButton: {
     marginLeft: theme.spacing(1)
+  },
+  signInButton:{
+    maginLeft: theme.spacing(1)
+  },
+  homeButton:{
+    maginRight: theme.spacing(100)
   }
 }));
 
@@ -42,6 +50,20 @@ const Topbar = props => {
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
+          <IconButton
+            className={classes.homeButton}
+            color="inherit"
+            href='/products'
+          >
+            <HomeOutlinedIcon />
+          </IconButton>
+          <IconButton
+            className={classes.signInButton}
+            color="inherit"
+            href='/sign-in'
+          >
+            <PermIdentityOutlinedIcon />
+          </IconButton>
           <IconButton color="inherit">
             <Badge
               badgeContent={notifications.length}

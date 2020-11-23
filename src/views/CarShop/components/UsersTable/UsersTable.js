@@ -115,7 +115,7 @@ const UsersTable = props => {
                     />
                   </TableCell>
                   <TableCell>Produto(s)</TableCell>
-                  <TableCell>Descrição</TableCell>
+                  <TableCell>Tamanho</TableCell>
                   <TableCell>Quantidade</TableCell>
                   <TableCell>Preço(R$)</TableCell>
                 </TableRow>
@@ -147,12 +147,11 @@ const UsersTable = props => {
                         <Typography variant="body1">{user.name}</Typography>
                       </div>
                     </TableCell>
-                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.size}</TableCell>
                     <TableCell>
-                      {user.address.city}, {user.address.state},{' '}
-                      {user.address.country}
+                      {user.quantity}
                     </TableCell>
-                    <TableCell>{user.phone}</TableCell>
+                    <TableCell>{user.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Button, Grid, Typography } from '@material-ui/core';
 import { SearchInput } from 'components';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -38,17 +39,17 @@ const ProductsToolbar = props => {
         <Grid container spacing='2'>
           <Grid 
             item
-            lg={3}
+            lg={6}
             sm={6}
-            xl={3}
+            xl={6}
             xs={12}>
             <SearchInput className={classes.searchInput} placeholder="Procurar Produto"/>
           </Grid>
           <Grid
             item
-            lg={6}
+            lg={3}
             sm={6}
-            xl={6}
+            xl={3}
             xs={12}></Grid>
           <Grid 
             item
@@ -57,8 +58,8 @@ const ProductsToolbar = props => {
             xl={3}
             xs={12}
             align='right'>           
-            <Button color="primary" variant="contained" href='/CarShop'>
-              Finalizar Pedido
+            <Button color="primary" variant="contained" href='/CarShop' size='large'>
+              <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
             </Button> 
           </Grid>
         </Grid>  
