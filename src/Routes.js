@@ -44,7 +44,7 @@ const Routes = () => {
       <RouteWithLayout
         component={ProductListView}
         exact
-        layout={MainWithoutSideBarLayout}
+        layout={MainLayout}
         path="/products"
       />
       <RouteWithLayout
@@ -98,13 +98,13 @@ const Routes = () => {
       <RouteWithLayout
         component={CarShopView}
         exact
-        layout={MainWithoutSideBarLayout}
+        layout={MainLayout}
         path="/CarShop"
       />
       <RouteWithLayout
         component={PaymentView}
         exact
-        layout={MainWithoutSideBarLayout}
+        layout={MainLayout}
         path="/Payment"
       />
       <RouteWithLayout

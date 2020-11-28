@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/styles';
-import { Button, Grid, Typography } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/styles';
+import { Button, Grid } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
 import { SearchInput } from 'components';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
@@ -27,6 +29,15 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1)
   }
 }));
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
 
 const ProductsToolbar = props => {
   const { className, ...rest } = props;
@@ -58,8 +69,10 @@ const ProductsToolbar = props => {
             xl={3}
             xs={12}
             align='right'>           
-            <Button color="primary" variant="contained" href='/CarShop' size='large'>
-              <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
+            <Button variant='contained' color='primary' aria-label="cart" href='/CarShop' >
+              <StyledBadge badgeContent={4} color="secondary">
+                <ShoppingCartOutlinedIcon color='inherit'/>
+              </StyledBadge>
             </Button> 
           </Grid>
         </Grid>  

@@ -10,7 +10,8 @@ import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
-import LoginIcon from '@material-ui/icons/InputTwoTone'
+import LoginIcon from '@material-ui/icons/PermIdentityOutlined'
+import SingUpIcon from '@material-ui/icons/PermContactCalendar';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 import { Profile, SidebarNav, UpgradePlan } from './components';
@@ -50,32 +51,22 @@ const Sidebar = props => {
       icon: <ShoppingBasketIcon />
     },
     {
-      title: 'Login',
+      title: 'Entrar',
       href: '/sign-in',
       icon: <LoginIcon />
     },
     {
-      title: 'Reset de senha',
+      title: 'Cadastre-se',
+      href: '/sign-up',
+      icon: <SingUpIcon />
+    },
+    {
+      title: 'Recuperar senha',
       href: '/PasswordReset',
       icon: <LockOpenIcon />
-    },
+    },    
     {
-      title: 'Typography',
-      href: '/typography',
-      icon: <TextFieldsIcon />
-    },
-    {
-      title: 'Icons',
-      href: '/icons',
-      icon: <ImageIcon />
-    },
-    {
-      title: 'Account',
-      href: '/account',
-      icon: <AccountBoxIcon />
-    },
-    {
-      title: 'Settings',
+      title: 'Configurações',
       href: '/settings',
       icon: <SettingsIcon />
     }
@@ -99,7 +90,6 @@ const Sidebar = props => {
           className={classes.nav}
           pages={pages}
         />
-        <UpgradePlan />
       </div>
     </Drawer>
   );

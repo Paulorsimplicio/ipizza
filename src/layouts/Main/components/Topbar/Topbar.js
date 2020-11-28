@@ -3,11 +3,11 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Badge, Hidden, IconButton, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Badge, Hidden, IconButton, Button, Typography, Icon } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
-import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
+import CallIcon from '@material-ui/icons/Call';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,14 +41,10 @@ const Topbar = props => {
           />
         </RouterLink>
         <div className={classes.flexGrow} />
+        <Typography color='inherit'>                   
+          Tel: (34) 4002-8922
+        </Typography>
         <Hidden mdDown>
-          <IconButton
-            className={classes.signInButton}
-            color="inherit"
-            href='/sign-in'
-          >
-            <PermIdentityOutlinedIcon />
-          </IconButton>
           <IconButton color="inherit">
             <Badge
               badgeContent={notifications.length}

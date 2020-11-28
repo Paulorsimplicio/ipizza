@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 import {
   Card,
   CardHeader,
@@ -22,6 +27,8 @@ const AccountDetails = props => {
 
   const classes = useStyles();
 
+  const [value, setValue] = React.useState('Dinheiro');
+
   const [values, setValues] = useState({
     firstName: 'Shen',
     lastName: 'Zhi',
@@ -32,12 +39,11 @@ const AccountDetails = props => {
   });
 
   const handleChange = event => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value
-    });
+    setValues({...values, [event.target.name]: event.target.value});
+    setValue(event.target.value);
   };
 
+  
   const states = [
     {
       value: 'alabama',
@@ -136,8 +142,20 @@ const AccountDetails = props => {
             <Grid
               item
               md={6}
-              xs={12}
-            >
+              xs={12}>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Opções de pagamento:</FormLabel>
+                <RadioGroup aria-label="Forma de pagamento" name="Forma de pagamento1" value={value} onChange={handleChange}>
+                  <FormControlLabel value="Dinheiro" control={<Radio />} label="Dinheiro" />
+                  <form className={classes.root} noValidate autoComplete="off">                    
+                    <TextField id="troco" label="Troco para:" />
+                  </form>
+                  <FormControlLabel value="Cartão" control={<Radio />} label="Cartão" />
+                  <form className={classes.root} noValidate autoComplete="off">                    
+                    <TextField id="bandeira" label="bandeira do cartão:" />
+                  </form>
+                </RadioGroup>
+              </FormControl>
             </Grid>
           </Grid>
         </CardContent>

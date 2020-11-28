@@ -26,15 +26,6 @@ const Account = () => {
           xl={12}
           xs={12}
         >
-          <AccountProfile />
-        </Grid>
-        <Grid
-          item
-          lg={12}
-          md={6}
-          xl={12}
-          xs={12}
-        >
           <AccountDetails />
         </Grid>
       </Grid>

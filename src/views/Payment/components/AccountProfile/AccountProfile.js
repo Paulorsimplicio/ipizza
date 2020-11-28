@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import moment from 'moment';
 import { makeStyles } from '@material-ui/styles';
+
 import {
   Card,
   CardActions,
@@ -15,12 +16,16 @@ import {
   Avatar,
   Typography,
   Divider,
-  Button,
-  LinearProgress
+  TextField
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    '& > *': {
+    margin: theme.spacing(1),
+    width: '25ch',
+    },
+  },
   details: {
     display: 'flex'
   },
@@ -97,7 +102,13 @@ const AccountProfile = props => {
               <FormLabel component="legend">Opções de pagamento:</FormLabel>
               <RadioGroup aria-label="Forma de pagamento" name="Forma de pagamento1" value={value} onChange={handleChange}>
                 <FormControlLabel value="Dinheiro" control={<Radio />} label="Dinheiro" />
+                <form className={classes.root} noValidate autoComplete="off">                    
+                  <TextField id="troco" label="Troco para:" />
+                </form>
                 <FormControlLabel value="Cartão" control={<Radio />} label="Cartão" />
+                <form className={classes.root} noValidate autoComplete="off">                    
+                  <TextField id="bandeira" label="bandeira do cartão:" />
+                </form>
               </RadioGroup>
             </FormControl>
         </div>

@@ -53,7 +53,6 @@ const MainWithoutSideBar = props => {
       <Topbar onSidebarOpen={handleSidebarOpen} />
       <main className={classes.content}>
         {children}
-        <Footer />
       </main>
     </div>
   );

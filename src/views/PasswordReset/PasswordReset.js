@@ -193,7 +193,7 @@ const PasswordReset = props => {
                 className={classes.quoteText}
                 variant="h1"
               >
-                Pizzaria Chapa Quente, resete sua senha. 
+                Pizzaria Chapa Quente, recupere sua senha. 
               </Typography>
               <div className={classes.person}>
               </div>
@@ -236,20 +236,6 @@ const PasswordReset = props => {
                   onChange={handleChange}
                   type="text"
                   value={formState.values.email || ''}
-                  variant="outlined"
-                />
-                <TextField
-                  className={classes.textField}
-                  error={hasError('password')}
-                  fullWidth
-                  helperText={
-                    hasError('password') ? formState.errors.password[0] : null
-                  }
-                  label="Nova senha"
-                  name="password"
-                  onChange={handleChange}
-                  type="password"
-                  value={formState.values.password || ''}
                   variant="outlined"
                 />
                 <Button
