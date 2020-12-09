@@ -261,7 +261,7 @@ const SignIn = props => {
                   size="large"
                   type="submit"
                   variant="contained"
-                  href='/products'
+                  href='/payment'
                 >
                   Entrar
                 </Button>

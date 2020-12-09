@@ -11,18 +11,12 @@ import {
   Divider,
   CardHeader,
   Button,
-  Popover,
-  Snackbar
+  Popover
 } from '@material-ui/core';
 import MoneyIcon from '@material-ui/icons/MoneyTwoTone'
 import DonutLargeIcon from '@material-ui/icons/DonutLarge'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import MuiAlert from '@material-ui/lab/Alert';
 
-
-  function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
 
 
 const useStyles = makeStyles(theme => ({

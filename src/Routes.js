@@ -2,11 +2,12 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
-import { Main as MainLayout, Minimal as MinimalLayout, MainWithoutSideBar as MainWithoutSideBarLayout } from './layouts';
+import { Main as MainLayout, Minimal as MinimalLayout, MainWithoutLogin as MainWithoutLoginLayout} from './layouts';
 
 import {
   Dashboard as DashboardView,
   ProductList as ProductListView,
+  ProductListWithoutLogin as ProductListWithoutLoginView,
   UserList as UserListView,
   Typography as TypographyView,
   Icons as IconsView,
@@ -14,9 +15,11 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
+  SignInToPay as SignInToPayView,
   NotFound as NotFoundView,
   PasswordReset as PasswordResetView,
   CarShop as CarShopView,
+  CarShopWithoutLogin as CarShopWithoutLoginView,
   Payment as PaymentView,
   PaymentFeedback as PaymentFeedbackView
 } from './views';
@@ -27,8 +30,8 @@ const Routes = () => {
       <Redirect
         exact
         from="/"
-        to="/products"
-      />
+        to="/productsWithoutLogin"
+      />      
       <RouteWithLayout
         component={DashboardView}
         exact
@@ -46,6 +49,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/products"
+      />
+      <RouteWithLayout
+        component={ProductListWithoutLoginView}
+        exact
+        layout={MainWithoutLoginLayout}
+        path="/productsWithoutLogin"
       />
       <RouteWithLayout
         component={TypographyView}
@@ -84,6 +93,12 @@ const Routes = () => {
         path="/sign-in"
       />
       <RouteWithLayout
+        component={SignInToPayView}
+        exact
+        layout={MinimalLayout}
+        path="/sign-in-to-pay"
+      />
+      <RouteWithLayout
         component={NotFoundView}
         exact
         layout={MinimalLayout}
@@ -100,6 +115,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/CarShop"
+      />
+      <RouteWithLayout
+        component={CarShopWithoutLoginView}
+        exact
+        layout={MainWithoutLoginLayout}
+        path="/CarShopWithouLogin"
       />
       <RouteWithLayout
         component={PaymentView}

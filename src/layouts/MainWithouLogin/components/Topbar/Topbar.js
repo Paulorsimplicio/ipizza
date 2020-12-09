@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { AppBar, Toolbar, Badge, Hidden, IconButton, Button, Typography, Icon } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import InputIcon from '@material-ui/icons/Input';
+import SingUpIcon from '@material-ui/icons/PermContactCalendar';
+import LoginIcon from '@material-ui/icons/PermIdentityOutlined'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   flexGrow: {
     flexGrow: 1
   },
-  signOutButton: {
+  signInButton: {
     marginLeft: theme.spacing(1)
   }
 }));
@@ -44,21 +44,20 @@ const Topbar = props => {
           Tel: (34) 4002-8922
         </Typography>
         <Hidden mdDown>
-          <IconButton color="inherit">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
           <IconButton
-            className={classes.signOutButton}
+            className={classes.signInButton}
             color="inherit"
-            href='/productsWithoutLogin'
+            href='/sign-up'
           >
-            <InputIcon />
+            <SingUpIcon />
+          </IconButton>
+
+          <IconButton
+            className={classes.signInButton}
+            color="inherit"
+            href='/sign-in'
+          >
+            <LoginIcon />
           </IconButton>
         </Hidden>
         <Hidden lgUp>

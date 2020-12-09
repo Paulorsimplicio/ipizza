@@ -4,8 +4,6 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Button, Typography, Grid } from '@material-ui/core';
 
-import { SearchInput } from 'components';
-
 const useStyles = makeStyles(theme => ({
   root: {},
   row: {
@@ -61,7 +59,7 @@ const UsersToolbar = props => {
             <Button
               color="primary"
               variant="contained"
-              href='/Payment'
+              href='/sign-in-to-pay'
             >
               Confirmar Pedido
             </Button>

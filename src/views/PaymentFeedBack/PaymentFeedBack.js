@@ -7,8 +7,6 @@ import {
   Grid,
   Button,
   IconButton,
-  TextField,
-  Link,
   Typography
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';

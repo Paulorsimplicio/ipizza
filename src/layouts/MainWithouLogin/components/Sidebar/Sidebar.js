@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SettingsIcon from '@material-ui/icons/Settings';
+import LoginIcon from '@material-ui/icons/PermIdentityOutlined'
+import SingUpIcon from '@material-ui/icons/PermContactCalendar';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
@@ -48,6 +50,16 @@ const Sidebar = props => {
       title: 'Carrinho',
       href: '/CarShop',
       icon: <ShoppingCartOutlinedIcon />
+    },
+    {
+      title: 'Entrar',
+      href: '/sign-in',
+      icon: <LoginIcon />
+    },
+    {
+      title: 'Cadastre-se',
+      href: '/sign-up',
+      icon: <SingUpIcon />
     },
     {
       title: 'Recuperar senha',

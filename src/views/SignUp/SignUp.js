@@ -339,6 +339,7 @@ const SignUp = props => {
                   size="large"
                   type="submit"
                   variant="contained"
+                  href='/sign-in'
                 >
                   Cadastrar 
                 </Button>

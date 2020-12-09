@@ -3,12 +3,15 @@ export { default as Dashboard } from './Dashboard';
 export { default as Icons } from './Icons';
 export { default as NotFound } from './NotFound';
 export { default as ProductList } from './ProductList';
+export { default as ProductListWithoutLogin } from './ProductListWithoutLogin';
 export { default as Settings } from './Settings';
 export { default as SignIn } from './SignIn';
+export { default as SignInToPay} from './SignInToPay';
 export { default as SignUp } from './SignUp';
 export { default as PasswordReset } from './PasswordReset';
 export { default as Typography } from './Typography';
 export { default as UserList } from './UserList';
 export { default as CarShop} from './CarShop';
+export { default as CarShopWithoutLogin } from './CarShopWithoutLogin';
 export { default as Payment} from './Payment';
 export { default as PaymentFeedback} from './PaymentFeedBack'

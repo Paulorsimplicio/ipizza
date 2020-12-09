@@ -67,8 +67,10 @@ const ProductsToolbar = props => {
             xl={3}
             xs={12}
             align='right'>           
-            <Button variant='contained' color='primary' aria-label="cart" href='/CarShop' >
+            <Button variant='contained' color='primary' aria-label="cart" href='/CarShopWithouLogin' >
+              <StyledBadge color="secondary" >
                 <ShoppingCartOutlinedIcon color='inherit'/>
+              </StyledBadge>
             </Button> 
           </Grid>
         </Grid>  
@@ -78,7 +80,8 @@ const ProductsToolbar = props => {
 };
 
 ProductsToolbar.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  mockCarShopList: PropTypes.number
 };
 
 export default ProductsToolbar;
